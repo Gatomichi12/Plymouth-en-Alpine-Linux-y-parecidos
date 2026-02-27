@@ -6,13 +6,13 @@ Se que no soy muy famoso pero mi guia es sencilla, como dice el titulo, es sobre
 
 Antes que nada, instala los paquetes necesarios: `sudo apk add plymouth plymouth-themes pax-utils dracut mkinitfs mesa-dri-gallium mesa-va-gallium xf86-video-intel xf86-video-amdgpu`  
 
-Asegurate que en /etc/mkinitfs/mkinitfs.conf, la linea `modules` esté antes que la de features, y esto es lo que deberia contener:
+Asegurate que en /etc/mkinitfs/mkinitfs.conf, la linea `modules` esté antes que la de `features`, y esto es lo que deberia contener:
 
 Antes tienes que instalar los drivers especificos para tu GPU, ya deberian estar instalados si instalaste los paquetes necesarios, en mi caso el driver es `i915` ya que mi GPU es Intel pero si es NVIDIA sería `nouveau`, y con AMD sería `amdgpu` : `modules="i915"`
 
-Luego en features tiene que decir esto, sino agregale mas opciones: `features="base kms plymouth ata ide scsi usb virtio ext4"`
+Luego en `features` tiene que decir esto, sino agregale mas opciones: `features="base kms plymouth ata ide scsi usb virtio ext4"`
 
-Recuerda instalar mkinitfs y dracut si no los tienes, haces `mkinitfs $(uname -r)`
+Recuerda instalar mkinitfs y dracut si no los tienes, despues de haber instalado ambos haces `mkinitfs $(uname -r)`
 
 Sigue el grub, si no tienes grub, puedes saltarte los pasos
 
