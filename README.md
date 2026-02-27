@@ -8,7 +8,7 @@ Antes que nada, instala los paquetes necesarios: `sudo apk add plymouth plymouth
 
 Asegurate que en /etc/mkinitfs/mkinitfs.conf, la linea `modules` esté antes que la de `features`, y esto es lo que deberia contener:
 
-Antes tienes que instalar los drivers especificos para tu GPU, ya deberian estar instalados si instalaste los paquetes necesarios, en mi caso el driver es `i915` ya que mi GPU es Intel pero si es NVIDIA sería `nouveau`, y con AMD sería `amdgpu` : `modules="i915"`
+En mi caso el driver es `i915` ya que mi GPU es Intel pero si es NVIDIA sería `nouveau`, y con AMD sería `amdgpu` : `modules="i915"`
 
 Luego en `features` tiene que decir esto, sino agregale mas opciones: `features="base kms plymouth ata ide scsi usb virtio ext4"`
 
