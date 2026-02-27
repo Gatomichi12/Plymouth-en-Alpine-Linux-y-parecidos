@@ -28,7 +28,7 @@ Primero mueve tu carpeta con la bootanimation a los temas de plymouth: `sudo mv 
 
 Segundo, verifica que si esté ahi: `plymouth-set-default-theme -l`
 
-Tercero, haz que tu tema sea el por defecto: `sudo plymouth-set-default-theme tutema`
+Tercero, haz que tu tema sea el por defecto: `sudo plymouth-set-default-theme tu-tema`
 
 Y por ultimo, tienes que tener dracut para esto: `sudo dracut --force --add plymouth /boot/initramfs-lts $(uname -r)`
 
