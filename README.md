@@ -12,7 +12,7 @@ Antes tienes que instalar los drivers especificos para tu GPU, ya deberian estar
 
 Luego en `features` tiene que decir esto, sino agregale mas opciones: `features="base kms plymouth ata ide scsi usb virtio ext4"`
 
-Recuerda instalar mkinitfs y dracut si no los tienes, despues de haber instalado ambos haces `mkinitfs $(uname -r)`
+Recuerda instalar mkinitfs y dracut si no los tienes, despues de haber instalado ambos haces `sudo mkinitfs $(uname -r)`
 
 Sigue el grub, si no tienes grub, puedes saltarte los pasos
 
