@@ -18,6 +18,8 @@ Sigue el grub, si no tienes grub, puedes saltarte los pasos
 
 En la linea del grub que es `GRUB_CMDLINE_LINUX_DEFAULT`, asegurate que esté `quiet` y `splash`, pero yo recomiendo que esté así: `GRUB_CMDLINE_LINUX_DEFAULT="quiet splash rw fbcon=nodefer video=1280x1024@60 loglevel=1 vt.global_cursor_default=0 plymouth.ignore-serial-consoles"`
 
+Puedes cambiar la resolucion, que en mi caso es `video=1280x1024@60` pero recomiendo que pongas la adecuada a tu pantalla.
+
 Si es posible, despues del cambio haz `sudo update-grub ` de lo contrario, haz sudo `sudo grub-mkconfig -o /boot/grub/grub.cfg`
 
 Estoy seguro que a partir de ahora va a funcionar plymouth, necesitarás instalarlo si no lo tienes obviamente.
