@@ -10,9 +10,11 @@ Antes que nada, instala los paquetes necesarios: `sudo apk add plymouth plymouth
 
 Solo instala `xf86-video-intel` para tarjetas Intel, `xf86-video-amdgpu` para tarjetas AMD y `xf86-video-nouveau` para tarjetas NVIDIA (Recomiendo que instales tambien `libdrm` y `mesa-vulkan-nouveau`) Pero solo instala el driver necesario para tu GPU sino pueden haber conflictos de drivers
 
-Asegurate que en /etc/mkinitfs/mkinitfs.conf, la linea `modules` esté antes que la de `features`, y esto es lo que deberia contener (Si no está, la puedes añadir) :
+Edita `/etc/mkinitfs/mkinitfs.conf`
 
-En mi caso el driver es `i915` ya que mi GPU es Intel pero si es NVIDIA sería `nouveau`, y con AMD sería `amdgpu` : `modules="i915"`
+Asegurate que la linea `modules` (Puedes añadirla si no está) esté antes que la de `features`, y esto es lo que deberia contener (Si no está, la puedes añadir) :
+
+En mi caso el driver es `i915` ya que mi GPU es Intel, pero si es NVIDIA sería `nouveau`, y con AMD sería `amdgpu`:
 
 Ejemplo: modules="i915"
 
