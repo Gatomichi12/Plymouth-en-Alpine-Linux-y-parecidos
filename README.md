@@ -4,15 +4,30 @@ Se que no soy muy famoso pero mi guia es sencilla, como dice el titulo, es sobre
 
 **Disclaimer:** Recuerda que eres el dueño de tu sistema, por lo tanto eres responsable bajo cualquier cambio que hagas, se que lo harás bien xd.
 
+
+**1)**
+
 Si no tienes `sudo` puedes usar `doas`
 
-Antes que nada, instala los paquetes necesarios: `sudo apk add plymouth plymouth-themes pax-utils dracut mkinitfs mesa-dri-gallium mesa-va-gallium xf86-video-intel xf86-video-amdgpu`  
+Antes que nada, instala los paquetes necesarios: `sudo apk add plymouth plymouth-themes pax-utils dracut mkinitfs mesa-dri-gallium mesa-va-gallium mesa-gl`  
 
-Solo instala `xf86-video-intel` para tarjetas Intel, `xf86-video-amdgpu` para tarjetas AMD y `xf86-video-nouveau` para tarjetas NVIDIA (Recomiendo que instales tambien `libdrm` y `mesa-vulkan-nouveau`) Pero solo instala el driver necesario para tu GPU sino pueden haber conflictos de drivers
+Ademas de los drivers de video:
+
+Para Intel solo instala: `xf86-video-intel linux-firmware-intel`
+
+Para AMD: `xf86-video-amdgpu` 
+Y dependiendo de tu setup instalas: `linux-firmware-amd` `linux-firmware-amdgpu` o `linux-firmware-amdnpu`
+
+Para NVIDIA: `xf86-video-nouveau libdrm mesa-vulkan-nouveau linux-firmware-nvidia`
+
+Pero solo instala el driver necesario para tu GPU sino pueden haber conflictos de drivers
+
+
+**2)**
 
 Edita `/etc/mkinitfs/mkinitfs.conf`
 
-Asegurate que la linea `modules` (Puedes añadirla si no está) esté antes que la de `features`, y esto es lo que deberia contener (Si no está, la puedes añadir) :
+Asegurate que la linea `modules` (Puedes añadirla si no está) esté antes que la de `features`, y esto es lo que deberia contener:
 
 En mi caso el driver es `i915` ya que mi GPU es Intel, pero si es NVIDIA sería `nouveau`, y con AMD sería `amdgpu`:
 
@@ -21,6 +36,9 @@ Ejemplo: modules="i915"
 Luego en `features` tiene que decir esto, sino agregale mas opciones: `features="base kms plymouth ata ide scsi usb virtio ext4"`
 
 Recuerda instalar mkinitfs y dracut si no los tienes, despues de haber instalado ambos haces `sudo mkinitfs $(uname -r)`
+
+
+**2)**
 
 Sigue el grub, si no tienes grub, puedes saltarte los pasos
 
@@ -31,6 +49,9 @@ En la linea del grub que es `GRUB_CMDLINE_LINUX_DEFAULT` (Como digo, si no está
 Esto hace que: EL booteo sea silencioso y aparezca plymouth, no aparezca informacion innecesaria del booteo ni tampoco el _ que parpadea, y al final el inicio se mostrara en la tty2 para dejar la tty1 limpia
 
 Si es posible, despues del cambio haz `sudo update-grub ` de lo contrario, haz sudo `sudo grub-mkconfig -o /boot/grub/grub.cfg`
+
+
+**2)**
 
 Estoy seguro que a partir de ahora va a funcionar plymouth, necesitarás instalarlo si no lo tienes obviamente.
 
