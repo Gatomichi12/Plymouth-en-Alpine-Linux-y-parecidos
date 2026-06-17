@@ -31,9 +31,14 @@ Asegurate que la linea `modules` (Puedes añadirla si no está) esté antes que 
 
 En mi caso el driver es `i915` ya que mi GPU es Intel, pero si es NVIDIA sería `nouveau`, y con AMD sería `amdgpu`:
 
-Ejemplo: modules="i915"
-
 Luego en `features` tiene que decir esto, sino agregale mas opciones: `features="base kms plymouth ata ide scsi usb virtio ext4"`
+
+Ejemplo de mi pc:
+
+`modules="i915"
+
+features="base kms plymouth ata ahci ide scsi usb virtio ext4"`
+
 
 Recuerda instalar mkinitfs y dracut si no los tienes, despues de haber instalado ambos haces `sudo mkinitfs $(uname -r)`
 
