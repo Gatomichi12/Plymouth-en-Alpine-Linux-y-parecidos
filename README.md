@@ -35,9 +35,9 @@ Luego en `features` tiene que decir esto, sino agregale mas opciones: `features=
 
 Ejemplo de mi pc:
 
-`modules="i915"
+**modules="i915"**
 
-features="base kms plymouth ata ahci ide scsi usb virtio ext4"`
+**features="base kms plymouth ata ahci ide scsi usb virtio ext4"**
 
 
 Recuerda instalar mkinitfs y dracut si no los tienes, despues de haber instalado ambos haces `sudo mkinitfs $(uname -r)`
