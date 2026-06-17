@@ -13,12 +13,12 @@ Antes que nada, instala los paquetes necesarios: `sudo apk add plymouth plymouth
 
 Ademas de los drivers de video:
 
-Para Intel solo instala: `xf86-video-intel linux-firmware-intel`
+Para **Intel** solo instala: `xf86-video-intel linux-firmware-intel`
 
-Para AMD: `xf86-video-amdgpu` 
+Para **AMD**: `xf86-video-amdgpu` 
 Y dependiendo de tu setup instalas: `linux-firmware-amd` `linux-firmware-amdgpu` o `linux-firmware-amdnpu`
 
-Para NVIDIA: `xf86-video-nouveau libdrm mesa-vulkan-nouveau linux-firmware-nvidia`
+Para **NVIDIA**: `xf86-video-nouveau libdrm mesa-vulkan-nouveau linux-firmware-nvidia`
 
 Pero solo instala el driver necesario para tu GPU sino pueden haber conflictos de drivers
 
