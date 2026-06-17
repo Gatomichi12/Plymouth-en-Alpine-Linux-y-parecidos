@@ -68,7 +68,7 @@ Segundo, verifica que si esté ahi: `plymouth-set-default-theme -l`
 
 Tercero, haz que tu tema sea el por defecto: `sudo plymouth-set-default-theme TU-TEMA`
 
-Puede variar si tu kernel es lts o no, compruebalo con `ls /boot/initramfs*` (No uses el virtual si no lo estas corriendo en una VM) y si es necesario cambia la linea en `/boot/initramfs-lts` por el nombre de tu kernel como por ejemplo `/boot/initramfs-generic` y así
+Puede variar si tu kernel es lts o no, compruebalo con `ls /boot/initramfs*` (No uses el virtual si no lo estas corriendo en una VM) y si es necesario cambia la linea de abajo de `/boot/initramfs-lts` por el nombre de tu kernel como por ejemplo `/boot/initramfs-generic` y así
 
 Y por ultimo, tienes que tener dracut para esto: `sudo dracut --force --add plymouth /boot/initramfs-lts $(uname -r)`
 
