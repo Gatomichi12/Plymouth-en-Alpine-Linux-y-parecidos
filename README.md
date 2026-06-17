@@ -27,7 +27,7 @@ Pero solo instala el driver necesario para tu GPU sino pueden haber conflictos d
 
 Edita `/etc/mkinitfs/mkinitfs.conf`
 
-Asegurate que la linea `modules` (Puedes añadirla si no está) esté antes que la de `features`, y esto es lo que deberia contener:
+Asegurate que la linea `modules` **(Puedes añadirla si no está)** esté antes que la de `features`, y esto es lo que deberia contener:
 
 En mi caso el driver es `i915` ya que mi GPU es Intel, pero si es NVIDIA sería `nouveau`, y con AMD sería `amdgpu`:
 
@@ -49,9 +49,9 @@ Sigue el grub, si no tienes grub, puedes saltarte los pasos
 
 Edita `/etc/deafult/grub`
 
-En la linea del grub que es `GRUB_CMDLINE_LINUX_DEFAULT` (Como digo, si no está la puedes añadir), asegurate que esté `quiet` y `splash`, pero yo recomiendo que esté así: `GRUB_CMDLINE_LINUX_DEFAULT="quiet splash rw fbcon=nodefer loglevel=1 vt.global_cursor_default=0 plymouth.ignore-serial-consoles console=tty2 "`
+En la linea del grub que es `GRUB_CMDLINE_LINUX_DEFAULT` **(Como digo, si no está la puedes añadir)**, asegurate que esté `quiet` y `splash`, pero yo recomiendo que esté así: `GRUB_CMDLINE_LINUX_DEFAULT="quiet splash rw fbcon=nodefer loglevel=1 vt.global_cursor_default=0 plymouth.ignore-serial-consoles console=tty2 "`
 
-Esto hace que: EL booteo sea silencioso y aparezca plymouth, no aparezca informacion innecesaria del booteo ni tampoco el _ que parpadea, y al final el inicio se mostrara en la tty2 para dejar la tty1 limpia
+Esto hace que: El booteo sea silencioso y aparezca plymouth, no aparezca informacion innecesaria del booteo ni tampoco el _ que parpadea, y al final los logs de tu init se mostraran en la tty2 para dejar la tty1 limpia
 
 Si es posible, despues del cambio haz `sudo update-grub ` de lo contrario, haz sudo `sudo grub-mkconfig -o /boot/grub/grub.cfg`
 
