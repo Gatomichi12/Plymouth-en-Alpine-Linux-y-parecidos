@@ -22,6 +22,8 @@ Recuerda instalar mkinitfs y dracut si no los tienes, despues de haber instalado
 
 Sigue el grub, si no tienes grub, puedes saltarte los pasos
 
+Edita `/etc/deafult/grub`
+
 En la linea del grub que es `GRUB_CMDLINE_LINUX_DEFAULT` (Como digo, si no está la puedes añadir), asegurate que esté `quiet` y `splash`, pero yo recomiendo que esté así: `GRUB_CMDLINE_LINUX_DEFAULT="quiet splash rw fbcon=nodefer loglevel=1 vt.global_cursor_default=0 plymouth.ignore-serial-consoles console=tty2 "`
 
 Esto hace que: EL booteo sea silencioso y aparezca plymouth, no aparezca informacion innecesaria del booteo ni tampoco el _ que parpadea, y al final el inicio se mostrara en la tty2 para dejar la tty1 limpia
